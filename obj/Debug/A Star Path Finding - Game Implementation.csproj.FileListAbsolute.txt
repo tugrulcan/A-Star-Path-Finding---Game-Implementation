@@ -1,0 +1,10 @@
+C:\Users\Tuğrul Can\Documents\GitHub\Yazılım Testi Odev3\Yazılım Testi Odev3\bin\Debug\Yazılım Testi Odev2.exe.config
+C:\Users\Tuğrul Can\Documents\GitHub\Yazılım Testi Odev3\Yazılım Testi Odev3\bin\Debug\Yazılım Testi Odev2.exe
+C:\Users\Tuğrul Can\Documents\GitHub\Yazılım Testi Odev3\Yazılım Testi Odev3\bin\Debug\Yazılım Testi Odev2.pdb
+C:\Users\Tuğrul Can\Documents\GitHub\Yazılım Testi Odev3\Yazılım Testi Odev3\obj\Debug\A_Star_Path_Finding_Implementation.Form1.resources
+C:\Users\Tuğrul Can\Documents\GitHub\Yazılım Testi Odev3\Yazılım Testi Odev3\obj\Debug\A_Star_Path_Finding_Implementation.frmBoard.resources
+C:\Users\Tuğrul Can\Documents\GitHub\Yazılım Testi Odev3\Yazılım Testi Odev3\obj\Debug\A_Star_Path_Finding_Implementation.frmGame.resources
+C:\Users\Tuğrul Can\Documents\GitHub\Yazılım Testi Odev3\Yazılım Testi Odev3\obj\Debug\A_Star_Path_Finding_Implementation.Properties.Resources.resources
+C:\Users\Tuğrul Can\Documents\GitHub\Yazılım Testi Odev3\Yazılım Testi Odev3\obj\Debug\A Star Path Finding - Game Implementation.csproj.GenerateResource.Cache
+C:\Users\Tuğrul Can\Documents\GitHub\Yazılım Testi Odev3\Yazılım Testi Odev3\obj\Debug\Yazılım Testi Odev2.exe
+C:\Users\Tuğrul Can\Documents\GitHub\Yazılım Testi Odev3\Yazılım Testi Odev3\obj\Debug\Yazılım Testi Odev2.pdb

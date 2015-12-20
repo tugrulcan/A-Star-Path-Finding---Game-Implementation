@@ -1,0 +1,14 @@
+C:\Users\Muhammet Kaya\Desktop\Yazılım Testi Odev3\Yazılım Testi Odev3\bin\Debug\Yazılım Testi Odev2.exe.config
+C:\Users\Muhammet Kaya\Desktop\Yazılım Testi Odev3\Yazılım Testi Odev3\bin\Debug\Yazılım Testi Odev2.exe
+C:\Users\Muhammet Kaya\Desktop\Yazılım Testi Odev3\Yazılım Testi Odev3\bin\Debug\Yazılım Testi Odev2.pdb
+C:\Users\Muhammet Kaya\Desktop\Yazılım Testi Odev3\Yazılım Testi Odev3\obj\Debug\Yazılım Testi Odev3.csprojResolveAssemblyReference.cache
+C:\Users\Muhammet Kaya\Desktop\Yazılım Testi Odev3\Yazılım Testi Odev3\obj\Debug\Yazılım_Testi_Odev3.Form1.resources
+C:\Users\Muhammet Kaya\Desktop\Yazılım Testi Odev3\Yazılım Testi Odev3\obj\Debug\Yazılım_Testi_Odev3.frmBoard.resources
+C:\Users\Muhammet Kaya\Desktop\Yazılım Testi Odev3\Yazılım Testi Odev3\obj\Debug\Yazılım_Testi_Odev3.frmGame.resources
+C:\Users\Muhammet Kaya\Desktop\Yazılım Testi Odev3\Yazılım Testi Odev3\obj\Debug\Yazılım_Testi_Odev3.Properties.Resources.resources
+C:\Users\Muhammet Kaya\Desktop\Yazılım Testi Odev3\Yazılım Testi Odev3\obj\Debug\Yazılım Testi Odev3.csproj.GenerateResource.Cache
+C:\Users\Muhammet Kaya\Desktop\Yazılım Testi Odev3\Yazılım Testi Odev3\obj\Debug\Yazılım Testi Odev2.exe
+C:\Users\Muhammet Kaya\Desktop\Yazılım Testi Odev3\Yazılım Testi Odev3\obj\Debug\Yazılım Testi Odev2.pdb
+C:\Users\Tuğrul Can\Documents\GitHub\Yazılım Testi Odev3\Yazılım Testi Odev3\bin\Debug\Yazılım Testi Odev2.exe.config
+C:\Users\Tuğrul Can\Documents\GitHub\Yazılım Testi Odev3\Yazılım Testi Odev3\obj\Debug\Yazılım Testi Odev2.exe
+C:\Users\Tuğrul Can\Documents\GitHub\Yazılım Testi Odev3\Yazılım Testi Odev3\obj\Debug\Yazılım Testi Odev2.pdb
