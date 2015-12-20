@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,8 @@ namespace A_Star_Path_Finding_Implementation
         public static int boyut = 10;
         Node[,] Board = new Node[boyut, boyut];
         Koordinat bitis;
+        string SolutionPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+
         private void frmBoard_Load(object sender, EventArgs e)
         {
             //DataTable dt = new DataTable();
@@ -31,7 +34,7 @@ namespace A_Star_Path_Finding_Implementation
             DataTable dt = new DataTable();
             for (int i = 0;i<boyut;i++)
             {
-                Image image = Image.FromFile(@"C:\Users\Muhammet Kaya\Pictures\arkaplan.jpg");
+                Image image = Image.FromFile(SolutionPath + @"\Content\arkaplan.jpg");
                 dtgBoard.Columns.Add(new DataGridViewImageColumn()
                 {
                     Image = image,
@@ -75,7 +78,7 @@ namespace A_Star_Path_Finding_Implementation
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            dtgBoard.Rows[baslangic.Y].Cells[baslangic.X].Value = Bitmap.FromFile(@"C:\Users\Muhammet Kaya\Pictures\fare.jpg");
+            dtgBoard.Rows[baslangic.Y].Cells[baslangic.X].Value = Bitmap.FromFile(SolutionPath + @"\Content\fare.jpg");
             AStar astar = new AStar();
             List<Node> path = astar.Search(Board[baslangic.X, baslangic.Y], Board[bitis.X, bitis.Y]);
             if (path[path.Count - 1] == null) path.Remove(null);
