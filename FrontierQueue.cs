@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace A_Star_Path_Finding_Implementation
 {
-    class FrontierQueue
+    public class FrontierQueue //Alternative for priority queue
     {
         Dictionary<Node,int> queue;
        

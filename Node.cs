@@ -21,10 +21,11 @@ namespace A_Star_Path_Finding_Implementation
         private    set { id = value; }
         }
         public List<Node> Neighbors { get; set; }
-
+        public bool isWall { get; set; }
         public Node()
         {
             Neighbors = new List<Node>();
+            isWall = false;
         }
         public Node(int x, int y)
         {

@@ -8,10 +8,7 @@ namespace A_Star_Path_Finding_Implementation
 {
     public class AStar
     {
-        private int heuristic(Node a, Node b)
-        {
-            return Math.Abs(a.X - b.X) + Math.Abs(a.Y - b.Y);
-        }
+
         FrontierQueue frontier = new FrontierQueue();
         Dictionary<Node, Node> cameFrom = new Dictionary<Node, Node>();
         Dictionary<Node, int> cost_so_far = new Dictionary<Node, int>();
@@ -29,26 +26,30 @@ namespace A_Star_Path_Finding_Implementation
 
                 if (current.ID == goal.ID)
                 {
-                    //buldu!
+                    //best path founded, break searching
                     break;
                 }
 
                 foreach (Node next in current.Neighbors)
                 {
-                    var new_cost = cost_so_far[current] + 1;
-                    if (inCostSoFar(next) == false || new_cost < cost_so_far[next])
+                    if (!next.isWall)
                     {
-                        cost_so_far[next] = new_cost;
-                        var priority = new_cost + heuristic(goal, next);
-                        frontier.put(next, priority);
-                        cameFrom[next] = current;
+                        var new_cost = cost_so_far[current] + 1;
+                        if (inCostSoFar(next) == false || new_cost < cost_so_far[next])
+                        {
+                            cost_so_far[next] = new_cost;
+                            var priority = new_cost + heuristic(goal, next);
+                            frontier.put(next, priority);
+                            cameFrom[next] = current;
+                        }
                     }
+                   
                 }
             }
 
             return reconstruct_path(cameFrom, current);
         }
-
+        
         public List<Node> reconstruct_path(Dictionary<Node, Node> cameFrom, Node current)
         {
             List<Node> totalPath = new List<Node>();
@@ -61,6 +62,7 @@ namespace A_Star_Path_Finding_Implementation
 
             return totalPath;
         }
+        //this method looks CameFrom  to find current like contains() method (Contains did not work)
         private bool inCameFrom(Node current)
         {
             foreach (var n in cameFrom.Keys)
@@ -83,6 +85,10 @@ namespace A_Star_Path_Finding_Implementation
             }
             return false;
         }
-
+        //We used Manhattan distance for calculating heuristic distance.
+        private int heuristic(Node a, Node b)
+        {
+            return Math.Abs(a.X - b.X) + Math.Abs(a.Y - b.Y);
+        }
     }
 }
