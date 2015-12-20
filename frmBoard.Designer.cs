@@ -55,14 +55,13 @@
             this.dtgBoard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtgBoard.EnableHeadersVisualStyles = false;
             this.dtgBoard.Location = new System.Drawing.Point(23, 22);
-            this.dtgBoard.MultiSelect = false;
             this.dtgBoard.Name = "dtgBoard";
             this.dtgBoard.ReadOnly = true;
             this.dtgBoard.RowHeadersVisible = false;
             this.dtgBoard.RowHeadersWidth = 22;
             this.dtgBoard.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Tan;
             this.dtgBoard.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
-            this.dtgBoard.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Tan;
+            this.dtgBoard.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Chocolate;
             this.dtgBoard.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dtgBoard.RowTemplate.Height = 40;
             this.dtgBoard.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -72,7 +71,7 @@
             this.dtgBoard.ShowEditingIcon = false;
             this.dtgBoard.ShowRowErrors = false;
             this.dtgBoard.Size = new System.Drawing.Size(556, 369);
-            this.dtgBoard.TabIndex = 1;
+            this.dtgBoard.TabIndex = 0;
             this.dtgBoard.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgBoard_CellContentClick);
             // 
             // timer1

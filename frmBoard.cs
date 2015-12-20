@@ -39,7 +39,7 @@ namespace A_Star_Path_Finding_Implementation
                 dtgBoard.Columns.Add(new DataGridViewImageColumn()
                 {
                     Image = image,
-                    ImageLayout = DataGridViewImageCellLayout.Stretch,
+                    ImageLayout = DataGridViewImageCellLayout.Stretch                    
                 });
             }
 
@@ -97,7 +97,7 @@ namespace A_Star_Path_Finding_Implementation
                 {
                     timer1.Stop();
                     player.Stop();
-                    MessageBox.Show("Yol bitti amk");
+                    MessageBox.Show("Yol bitti");
                 }
                     
                 baslangic.X = path[path.Count - 2].X;
@@ -142,11 +142,15 @@ namespace A_Star_Path_Finding_Implementation
 
         private void dtgBoard_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Koordinat Wall = new Koordinat();
-            Wall.X = dtgBoard.SelectedCells[0].ColumnIndex;
-            Wall.Y = dtgBoard.SelectedCells[0].RowIndex;
-            Board[Wall.X, Wall.Y].isWall = true;
-            dtgBoard.SelectedCells[0].Value = Bitmap.FromFile(SolutionPath + @"\Content\duvar.jpg");
+            Koordinat Wall;
+            for (int i = 0;i< dtgBoard.SelectedCells.Count;i++)
+            {
+                Wall = new Koordinat();
+                Wall.X = dtgBoard.SelectedCells[i].ColumnIndex;
+                Wall.Y = dtgBoard.SelectedCells[i].RowIndex;
+                Board[Wall.X, Wall.Y].isWall = true;
+                dtgBoard.SelectedCells[i].Value = Bitmap.FromFile(SolutionPath + @"\Content\duvar.jpg");
+            }
         }
     }
 }
