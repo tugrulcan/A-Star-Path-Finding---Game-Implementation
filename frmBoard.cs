@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,7 +23,7 @@ namespace A_Star_Path_Finding_Implementation
         Node[,] Board = new Node[boyut, boyut];
         Koordinat bitis;
         string SolutionPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
-
+        SoundPlayer player = new SoundPlayer();
         private void frmBoard_Load(object sender, EventArgs e)
         {
             //DataTable dt = new DataTable();
@@ -70,20 +71,35 @@ namespace A_Star_Path_Finding_Implementation
             
             baslangic = new Koordinat();
             bitis = new Koordinat();
+            baslangic.X = 0;
+            baslangic.Y = 0;
+            bitis.X = 9;
+            bitis.Y = 9;
             MessageBox.Show("Başlangıç Koordinatlar: " + (baslangic.X+1).ToString() + "," + (baslangic.Y+1).ToString()+"\n"+
                             "Bitiş Koordinatlar: " + (bitis.X+1).ToString() + ","+ (bitis.Y+1).ToString());
+            dtgBoard.Rows[baslangic.Y].Cells[baslangic.X].Value = Bitmap.FromFile(SolutionPath + @"\Content\fare.jpg");
+            
+            string path = SolutionPath + @"\Content\Fare_Sesi.wav"; // Müzik adresi
+            player.SoundLocation = path;
+            player.Play(); //play it
             timer1.Start();
             
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            dtgBoard.Rows[baslangic.Y].Cells[baslangic.X].Value = Bitmap.FromFile(SolutionPath + @"\Content\fare.jpg");
             AStar astar = new AStar();
             List<Node> path = astar.Search(Board[baslangic.X, baslangic.Y], Board[bitis.X, bitis.Y]);
             if (path[path.Count - 1] == null) path.Remove(null);
             if (path.Count > 1)
             {
+                if (path[0].X != bitis.X && path[0].Y != bitis.Y)
+                {
+                    timer1.Stop();
+                    player.Stop();
+                    MessageBox.Show("Yol bitti amk");
+                }
+                    
                 baslangic.X = path[path.Count - 2].X;
                 baslangic.Y = path[path.Count - 2].Y;
             }
@@ -93,11 +109,21 @@ namespace A_Star_Path_Finding_Implementation
                 baslangic.Y = path[path.Count - 1].Y;
             }
             else
+            {
                 timer1.Stop();
-            
+                player.Stop();
+            }
+ 
+            dtgBoard.Rows[baslangic.Y].Cells[baslangic.X].Value = Bitmap.FromFile(SolutionPath + @"\Content\fare.jpg");
+            if (baslangic.X == bitis.X && baslangic.Y == bitis.Y)
+            {
+                timer1.Stop();
+                player.Stop();
+                MessageBox.Show("Oyun Bitti");
+            }
 
 
-            
+
         }
         public class Koordinat
         {
@@ -112,6 +138,15 @@ namespace A_Star_Path_Finding_Implementation
                 X = rnd.Next(0, 9);
                 Y = rnd.Next(0, 9);
             }
+        }
+
+        private void dtgBoard_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Koordinat Wall = new Koordinat();
+            Wall.X = dtgBoard.SelectedCells[0].ColumnIndex;
+            Wall.Y = dtgBoard.SelectedCells[0].RowIndex;
+            Board[Wall.X, Wall.Y].isWall = true;
+            dtgBoard.SelectedCells[0].Value = Bitmap.FromFile(SolutionPath + @"\Content\duvar.jpg");
         }
     }
 }

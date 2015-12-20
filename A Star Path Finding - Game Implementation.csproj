@@ -101,7 +101,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\arkaplan.jpg" />
+    <Content Include="Content\duvar.jpg" />
+    <Content Include="Content\Fare Sesi.mp3" />
     <Content Include="Content\fare.jpg" />
+    <Content Include="Content\Fare_Sesi.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

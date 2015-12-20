@@ -73,6 +73,7 @@
             this.dtgBoard.ShowRowErrors = false;
             this.dtgBoard.Size = new System.Drawing.Size(556, 369);
             this.dtgBoard.TabIndex = 1;
+            this.dtgBoard.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgBoard_CellContentClick);
             // 
             // timer1
             // 
