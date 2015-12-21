@@ -78,16 +78,14 @@ namespace A_Star_Path_Finding_Implementation
             MessageBox.Show("Başlangıç Koordinatlar: " + (baslangic.X+1).ToString() + "," + (baslangic.Y+1).ToString()+"\n"+
                             "Bitiş Koordinatlar: " + (bitis.X+1).ToString() + ","+ (bitis.Y+1).ToString());
             dtgBoard.Rows[baslangic.Y].Cells[baslangic.X].Value = Bitmap.FromFile(SolutionPath + @"\Content\fare.jpg");
-            
+            dtgBoard.Rows[bitis.Y].Cells[bitis.X].Value = Bitmap.FromFile(SolutionPath + @"\Content\peynir.jpg");
             string path = SolutionPath + @"\Content\Fare_Sesi.wav"; // Müzik adresi
             player.SoundLocation = path;
-            player.Play(); //play it
-            timer1.Start();
-            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            dtgBoard.Rows[baslangic.Y].Cells[baslangic.X].Value = Bitmap.FromFile(SolutionPath + @"\Content\arkaplan.jpg");
             AStar astar = new AStar();
             List<Node> path = astar.Search(Board[baslangic.X, baslangic.Y], Board[bitis.X, bitis.Y]);
             if (path[path.Count - 1] == null) path.Remove(null);
@@ -151,6 +149,12 @@ namespace A_Star_Path_Finding_Implementation
                 Board[Wall.X, Wall.Y].isWall = true;
                 dtgBoard.SelectedCells[i].Value = Bitmap.FromFile(SolutionPath + @"\Content\duvar.jpg");
             }
+        }
+
+        private void başlatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+            player.Play();
         }
     }
 }

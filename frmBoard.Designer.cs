@@ -31,7 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.dtgBoard = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.başlatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dtgBoard)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgBoard
@@ -79,17 +82,39 @@
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.başlatToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(603, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // başlatToolStripMenuItem
+            // 
+            this.başlatToolStripMenuItem.Name = "başlatToolStripMenuItem";
+            this.başlatToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.başlatToolStripMenuItem.Text = "Başlat";
+            this.başlatToolStripMenuItem.Click += new System.EventHandler(this.başlatToolStripMenuItem_Click);
+            // 
             // frmBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(603, 412);
             this.Controls.Add(this.dtgBoard);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmBoard";
             this.Text = "frmBoard";
             this.Load += new System.EventHandler(this.frmBoard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgBoard)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -97,5 +122,7 @@
 
         private System.Windows.Forms.DataGridView dtgBoard;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem başlatToolStripMenuItem;
     }
 }
