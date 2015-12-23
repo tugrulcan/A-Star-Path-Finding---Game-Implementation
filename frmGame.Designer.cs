@@ -30,13 +30,14 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.oyunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.baslatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.parametreAyarlaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.parametreAyarlaToolStripMenuItem,
             this.oyunToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -46,18 +47,17 @@
             // 
             // oyunToolStripMenuItem
             // 
-            this.oyunToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.baslatToolStripMenuItem});
             this.oyunToolStripMenuItem.Name = "oyunToolStripMenuItem";
-            this.oyunToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.oyunToolStripMenuItem.Text = "Oyun";
+            this.oyunToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.oyunToolStripMenuItem.Text = "Harita Oluştur";
+            this.oyunToolStripMenuItem.Click += new System.EventHandler(this.oyunToolStripMenuItem_Click);
             // 
-            // baslatToolStripMenuItem
+            // parametreAyarlaToolStripMenuItem
             // 
-            this.baslatToolStripMenuItem.Name = "baslatToolStripMenuItem";
-            this.baslatToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
-            this.baslatToolStripMenuItem.Text = "Baslat";
-            this.baslatToolStripMenuItem.Click += new System.EventHandler(this.baslatToolStripMenuItem_Click);
+            this.parametreAyarlaToolStripMenuItem.Name = "parametreAyarlaToolStripMenuItem";
+            this.parametreAyarlaToolStripMenuItem.Size = new System.Drawing.Size(109, 20);
+            this.parametreAyarlaToolStripMenuItem.Text = "Parametre Ayarla";
+            this.parametreAyarlaToolStripMenuItem.Click += new System.EventHandler(this.parametreAyarlaToolStripMenuItem_Click);
             // 
             // frmGame
             // 
@@ -80,6 +80,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem oyunToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem baslatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem parametreAyarlaToolStripMenuItem;
     }
 }

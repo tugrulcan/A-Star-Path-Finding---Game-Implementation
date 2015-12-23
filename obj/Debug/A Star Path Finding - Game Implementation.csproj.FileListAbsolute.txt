@@ -32,3 +32,4 @@ C:\Users\Tuğrul Can\Documents\GitHub\A Star Path Finding - Game Implementation\
 C:\Users\Tuğrul Can\Documents\GitHub\A Star Path Finding - Game Implementation\A-Star-Path-Finding---Game-Implementation\obj\Debug\A_Star_Path_Finding_Implementation.Properties.Resources.resources
 C:\Users\Tuğrul Can\Documents\GitHub\A Star Path Finding - Game Implementation\A-Star-Path-Finding---Game-Implementation\obj\Debug\A Star Path Finding - Game Implementation.csproj.GenerateResource.Cache
 >>>>>>> origin/master
+C:\Users\Muhammet Kaya\Documents\GitHub\A-Star-Path-Finding---Game-Implementation\obj\Debug\A_Star_Path_Finding_Implementation.frmParametre.resources

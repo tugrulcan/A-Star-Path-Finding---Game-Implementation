@@ -16,8 +16,23 @@ namespace A_Star_Path_Finding_Implementation
         {
             InitializeComponent();
         }
-
+        public static frmBoard.Koordinat Baslangic;
+        public static frmBoard.Koordinat Bitis;
+        public static int boyut;
         private void baslatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void parametreAyarlaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmParametre parametre = new frmParametre();
+            parametre.MdiParent = this;
+            parametre.WindowState = FormWindowState.Maximized;
+            parametre.Show();
+        }
+
+        public void oyunToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmBoard board = new frmBoard();
             board.MdiParent = this;

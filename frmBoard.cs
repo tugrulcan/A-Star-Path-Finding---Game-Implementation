@@ -19,13 +19,17 @@ namespace A_Star_Path_Finding_Implementation
             InitializeComponent();
         }
         Koordinat baslangic;
-        public static int boyut = 10;
-        Node[,] Board = new Node[boyut, boyut];
+        static int boyut = 10;
+        Node[,] Board ;
         Koordinat bitis;
+        string Yol;
         string SolutionPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
         SoundPlayer player = new SoundPlayer();
         private void frmBoard_Load(object sender, EventArgs e)
         {
+            Yol = "";
+            boyut = frmGame.boyut;
+            Board = new Node[boyut, boyut];
             //DataTable dt = new DataTable();
             //for (int i = 0; i < boyut; i++)
             //    dt.Columns.Add();
@@ -69,18 +73,16 @@ namespace A_Star_Path_Finding_Implementation
                 }
             }
             
-            baslangic = new Koordinat();
-            bitis = new Koordinat();
-            baslangic.X = 0;
-            baslangic.Y = 0;
-            bitis.X = 9;
-            bitis.Y = 9;
+            baslangic = frmGame.Baslangic;
+            bitis = frmGame.Bitis;
             MessageBox.Show("Başlangıç Koordinatlar: " + (baslangic.X+1).ToString() + "," + (baslangic.Y+1).ToString()+"\n"+
                             "Bitiş Koordinatlar: " + (bitis.X+1).ToString() + ","+ (bitis.Y+1).ToString());
             dtgBoard.Rows[baslangic.Y].Cells[baslangic.X].Value = Bitmap.FromFile(SolutionPath + @"\Content\fare.jpg");
             dtgBoard.Rows[bitis.Y].Cells[bitis.X].Value = Bitmap.FromFile(SolutionPath + @"\Content\peynir.jpg");
             string path = SolutionPath + @"\Content\Fare_Sesi.wav"; // Müzik adresi
             player.SoundLocation = path;
+
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -111,13 +113,14 @@ namespace A_Star_Path_Finding_Implementation
                 timer1.Stop();
                 player.Stop();
             }
- 
+            Yol += baslangic.X.ToString() + " - " + baslangic.Y.ToString()+"\n";
             dtgBoard.Rows[baslangic.Y].Cells[baslangic.X].Value = Bitmap.FromFile(SolutionPath + @"\Content\fare.jpg");
             if (baslangic.X == bitis.X && baslangic.Y == bitis.Y)
             {
                 timer1.Stop();
                 player.Stop();
                 MessageBox.Show("Oyun Bitti");
+                MessageBox.Show(Yol);
             }
 
 
